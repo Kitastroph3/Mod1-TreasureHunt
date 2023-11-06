@@ -37,8 +37,8 @@ HTML/CSS
     - Restart
 
 -------------------------------
-- Make background grounds (10 x 10)
-    - x2
+- Make background grounds (8 x 8)
+    - //x2
 - Make objects (hidden)
     - 4 objects
         - 1x2-- stone
@@ -66,5 +66,5 @@ HTML/CSS
 - game continue function
 
 --------------------------------------
-Additional
-
+Future
+- Only one payer can "find" each object. First one to find each object has score. Finder's keepers.

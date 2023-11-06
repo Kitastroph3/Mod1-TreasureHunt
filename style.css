@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(114, 160, 61);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#gamearea {
+    display: flex;
+    width: 90%;
+    background-color: rgba(194, 139, 29, 0.73);
+    justify-content: space-around;
+    align-items: center;
+    height: 40vh;
+    flex-wrap: wrap;
+}
+
+#playermap {
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+    margin: 5px;
+}
+
+#computermap {
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+    margin: 5px;
+}
