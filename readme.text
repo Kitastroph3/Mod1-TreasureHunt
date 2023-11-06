@@ -1,0 +1,70 @@
+TREASURE TROVE (Battleship-like game) WIREFRAMING
+
+ABOUT
+ You are a treasure hunter and are racing against other treasure hunters (computer or second player)
+ to find the buried treasues first. Legend has it that these 4 fabled objects are hidden in the grounds. 
+    - Philosopher's stone (1 x 2)
+    - Pot of gold at the end of the Rainbow (size 1 x 3)
+    - King Arthur's Sword (size 1 x 3)
+    - Davy Jones chest (size 1 x 4)
+These grounds are magical and where these items are hidden are different for every person.
+Can you find them first?
+
+GAMEPLAY
+- {There are two gameboards. One that the player "sees" and the other that the computer "sees"      
+    (Locations for all objects are determined randomly by the computer.)}
+- Each round consists of:
+    1. Player selects square to dig. 
+        If part of an object was found, the square turns gold.
+        If no object was uncovered, the square turns grey. 
+    2. Computer/Player 2 selects game square.
+        If part of an object was found, the square turns gold.
+        If no object was uncovered, the square turns grey. 
+- At the end of each round, computer will check to see if game is still in play
+    - If player or computer uncovered all items, game is not in play (false)
+    If false, then....
+        - If player finds all the items before computer- player wins!
+            - play again
+        - If computer locates all objeccts before player- player loses :/
+            - play again
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+HTML/CSS
+- 2 containers using flex
+    - set minimum height
+    - have items stack if they do not fit across
+- Button:
+    - Restart
+
+-------------------------------
+- Make background grounds (10 x 10)
+    - x2
+- Make objects (hidden)
+    - 4 objects
+        - 1x2-- stone
+        - 1x3-- gold
+        - 1x3-- sword
+        - 1x4-- chest       
+    - Randomly appears within background grounds
+    - cannot occupy same space as another obeject
+    - can be horizontal or vertical
+- 
+---------------------
+- when player clicks square, test:
+    1) if player selected square with object
+        - if true, square changes to gold
+        - if false, square changes to lightgray
+    2) computer "goes" by selecting random grid number (x, y)
+        - if object is selected, changes to red
+        - if object is not selected, changes to lightgray 
+            if object is selected, next move should be limited to vertical and horizontal square around previous choice
+    3) check to see if game should continue
+
+- add event listener for player input
+- player selecetion function
+- computer selection function
+- game continue function
+
+--------------------------------------
+Additional
+
