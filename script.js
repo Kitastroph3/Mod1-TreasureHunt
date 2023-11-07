@@ -11,10 +11,12 @@ const gold = new mythitem('gold', 3)
 const sword = new mythitem('sword', 3)
 const chest = new mythitem('chest', 4)
 
+//QUERIES
 //make the maps
-const gamearea= document.querySelector('#gamearea')
+const gamearea = document.querySelector('#gamearea')
 
-function makemap() { 
+//FUCNTIONS
+function makemap() {
     const width = 8
     const map = document.createElement('div')
     map.classList.add('map')
@@ -24,12 +26,13 @@ function makemap() {
         cel.classList.add('cel')
         cel.style.height = '30px'
         cel.style.width = '30px'
-        cel.style.border = 'white'
+        cel.style.border = '1px solid white'
         cel.style.backgroundColor = 'grey'
-        gamearea.append(cel)   
+        map.append(cel)
     }
+    gamearea.append(map)
 }
 
 makemap()
-
+makemap()
 
