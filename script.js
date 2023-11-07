@@ -52,11 +52,10 @@ makeMap("Hunter1")
 
 function burytreasure() { 
     let x = Math.floor(Math.random(64))
-    console.log(x)
+    
 }
 //
 //
  
-burytreasure()
 
 
