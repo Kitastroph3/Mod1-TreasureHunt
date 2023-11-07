@@ -14,7 +14,8 @@ body {
     background-color: rgba(194, 139, 29, 0.73);
     justify-content: space-evenly;
     align-items: center;
-    height: 40vh;
+    height: auto;
+    padding: 2%;
     flex-wrap: wrap;
 }
 

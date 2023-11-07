@@ -4,7 +4,7 @@ ABOUT
  You are a treasure hunter and are racing against other treasure hunters (computer or second player)
  to find the buried treasues first. Legend has it that these 4 fabled objects are hidden in the grounds. 
     - Philosopher's stone (1 x 2)
-    - Pot of gold at the end of the Rainbow (size 1 x 3)
+    - Pot of gold at the end of the Rainbow (size 1 x 2)
     - King Arthur's Sword (size 1 x 3)
     - Davy Jones chest (size 1 x 4)
 These grounds are magical and where these items are hidden are different for every person.
@@ -42,7 +42,7 @@ HTML/CSS
 - Make objects (hidden)
     - 4 objects
         - 1x2-- stone
-        - 1x3-- gold
+        - 1x2-- gold
         - 1x3-- sword
         - 1x4-- chest       
     - Randomly appears within background grounds
