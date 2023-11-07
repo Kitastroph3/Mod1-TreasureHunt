@@ -54,7 +54,7 @@ HTML/CSS
     1) if player selected square with object
         - if true, square changes to gold
         - if false, square changes to lightgray
-    2) computer "goes" by selecting random grid number (x, y)
+    2) computer "goes" by selecting random grid number
         - if object is selected, changes to red
         - if object is not selected, changes to lightgray 
             if object is selected, next move should be limited to vertical and horizontal square around previous choice
