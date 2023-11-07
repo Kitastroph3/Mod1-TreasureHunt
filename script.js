@@ -11,9 +11,13 @@ const gold = new MythItem('gold', 1)
 const sword = new MythItem('sword', 1)
 const chest = new MythItem('chest', 1)
 
+
+const treasure = [stone, gold, sword, chest]
+
 //QUERIES
 //make the maps
-const gameArea = document.querySelector('#gamearea')
+
+const gameArea = document.querySelector("#gamearea")
 
 const width = 8
 
@@ -46,10 +50,13 @@ makeMap("Hunter1")
 // if cel is clicked, then alert score i+10
 //
 
-//
+function burytreasure() { 
+    let x = Math.floor(Math.random(64))
+    console.log(x)
+}
 //
 //
  
-
+burytreasure()
 
 
