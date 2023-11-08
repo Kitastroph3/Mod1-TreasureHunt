@@ -29,7 +29,7 @@ body {
     margin: 10px;
 }
 
-.cel {
+.gridA, .gridB {
     /* make the border show up inside grid, so it doesn't add to the  */
     box-sizing: border-box;
     height: 30px;
@@ -38,7 +38,7 @@ body {
     background-color: grey;
 } 
 
-.cel:hover {
-    cursor: crosshair;
+.gridA:hover, .gridB:hover {
+    cursor: grab;
     background-color: red;
 } 

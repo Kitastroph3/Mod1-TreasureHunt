@@ -1,28 +1,30 @@
 //creating objects (origins of mythical objects):
 class MythItem { 
-    constructor(name, size, location) { 
+    constructor(name, location) { 
         this.name = name
-        this.size = size
         this.location = location
     }
 }
 
-let stone = new MythItem('stone', 1, 1)
-let gold = new MythItem('gold', 1, 1)
-let sword = new MythItem('sword', 1, 1)
-let chest = new MythItem('chest', 1, 1)
+let stone = new MythItem('stone', 1)
+let gold = new MythItem('gold', 1)
+let sword = new MythItem('sword', 1)
+let chest = new MythItem('chest', 1)
 
+let stone2 = new MythItem('stone', 1)
+let gold2 = new MythItem('gold', 1)
+let sword2 = new MythItem('sword', 1)
+let chest2 = new MythItem('chest', 1)
 
-//QUERIES
 let treasure = [stone, gold, sword, chest]
-const gameArea = document.querySelector("#gamearea")
-const huntermap = document.querySelectorAll('div')
-
-const width = 8
+let treasure2 = [stone2, gold2, sword2, chest2]
 
 //FUNCTIONS
-//makemap
-function makeMap(hunter) {
+//----------------makemaps---------------------------
+const gameArea = document.querySelector("#gamearea")
+const width = 8
+
+function makeMap(hunter, mapname) {
     const map = document.createElement('div')
     map.id = hunter
     map.classList.add('map')
@@ -30,35 +32,77 @@ function makeMap(hunter) {
 
     for (let i = 0; i < width * width; i++) { 
         const cel = document.createElement('div')
-        cel.classList.add('cel')
+        cel.classList.add(mapname)
         cel.id = i+1
         map.append(cel)
     }
 }
 
-makeMap("hunter1")
-
+makeMap("hunterA", "gridA")
+makeMap("hunterB", "gridB")
 
 //------- assign random number to treasures------
-function burytreasure() {
+// parameter x refers to array (treasure or treasure2)
+function burytreasure(x) {
     for (i = 0; i < treasure.length; i++) {
-        treasure[i].location = Math.floor(Math.random() * 64)
+        x[i].location = Math.floor(Math.random() * 64)
+    }
+    //make sure each treasure location is unique
+    if (x[0].location != x[1].location &&
+        x[0].location != x[2].location &&
+        x[0].location != x[3].location &&
+        x[1].location != x[2].location &&
+        x[1].location != x[3].location &&
+        x[2].location != x[3].location) {
+        console.log(x)
+    } else {
+        burytreasure()
     }
 }
-//------- add event listeners for grid boxes
-// huntermap.forEach(item => {
-//     item.addEventListener('click', onclick())})
 
-// function changecolor() {
-//     document.cel.style.backgroundColor = 'blue';
-// }
-// huntermap.forEach(item).addEventListener('click', function onClick(event) {
-//     div.style.backgroundColor = 'blue'
-// })
-//https://bobbyhadz.com/blog/javascript-change-background-color-on-click
+burytreasure(treasure)
+burytreasure(treasure2)
+
+//------- add event listeners for grid boxes----------
+let huntermap = document.querySelectorAll(".gridA")
+let huntermap2 = document.querySelectorAll(".gridB")
+
+function makediggable(usermap, digColor) {
+    usermap.forEach(grid => {
+        grid.addEventListener('click', (e) => {
+            grid.style.backgroundColor = digColor
+        });
+    });
+}
+
+makediggable(huntermap, 'blue')
+makediggable(huntermap2, 'green')
+
+//------- hide objects in hunter maps----------------
+
+function puttreasureinmap() { 
+    for (i = 0; i < treasure.length; i++) {
+        treasure[i].location
+        // make hidden id for mythobject. 
+        //if clicked on, 
+        //  reveal object and 
+        //  add a score to screen
+    }
+}
+
+//------ make computer "go"--------------------------
 
 
-//----------------
-burytreasure()
-console.log(treasure)
+
+
+
+//------ make sure round is valid - new item is selected)----
+
+
+
+//------ check to make sure gameplay still = true
+//------ over if all objects are not found by either map1 or map2---
+
+
+
 
