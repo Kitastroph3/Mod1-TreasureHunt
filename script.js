@@ -1,15 +1,16 @@
 //creating objects (origins of mythical objects):
 class MythItem { 
-    constructor(name, location) { 
+    constructor(name, size, location) { 
         this.name = name
+        this.size = size
         this.location = location
     }
 }
 
-let stone = new MythItem('stone', )
-let gold = new MythItem('gold', '')
-let sword = new MythItem('sword', '')
-let chest = new MythItem('chest', '')
+let stone = new MythItem('stone', 1, 1)
+let gold = new MythItem('gold', 1, 1)
+let sword = new MythItem('sword', 1, 1)
+let chest = new MythItem('chest', 1, 1)
 
 
 //QUERIES
@@ -31,23 +32,33 @@ function makeMap(hunter) {
         const cel = document.createElement('div')
         cel.classList.add('cel')
         cel.id = i+1
-        //map size is 240px, 8 x 8 grid
-        cel.style.height = '30px'
-        cel.style.width = '30px'
-        cel.style.border = '1px solid white'
-        cel.style.backgroundColor = 'grey'
         map.append(cel)
     }
 }
 
-makeMap("Hunter1")
+makeMap("hunter1")
 
+
+//------- assign random number to treasures------
 function burytreasure() {
     for (i = 0; i < treasure.length; i++) {
-        treasure[i].location = Math.floor(Math.random()*64)
+        treasure[i].location = Math.floor(Math.random() * 64)
     }
 }
+//------- add event listeners for grid boxes
+// huntermap.forEach(item => {
+//     item.addEventListener('click', onclick())})
 
+// function changecolor() {
+//     document.cel.style.backgroundColor = 'blue';
+// }
+// huntermap.forEach(item).addEventListener('click', function onClick(event) {
+//     div.style.backgroundColor = 'blue'
+// })
+//https://bobbyhadz.com/blog/javascript-change-background-color-on-click
+
+
+//----------------
 burytreasure()
 console.log(treasure)
 

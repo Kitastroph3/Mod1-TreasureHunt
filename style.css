@@ -32,8 +32,13 @@ body {
 .cel {
     /* make the border show up inside grid, so it doesn't add to the  */
     box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    border: 1px solid white;
+    background-color: grey;
 } 
 
-/* #Hunter1 .cel:hover {
-    background-color: rgb(136, 11, 11);
-} */
+.cel:hover {
+    cursor: crosshair;
+    background-color: red;
+} 
