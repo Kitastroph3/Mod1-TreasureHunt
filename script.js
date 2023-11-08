@@ -1,19 +1,19 @@
 //creating objects (origins of mythical objects):
 class MythItem { 
-    constructor(name, length) { 
+    constructor(name, location) { 
         this.name = name
-        this.length = length
+        this.location = location
     }
 }
 
-const stone = new MythItem('stone', 1)
-const gold = new MythItem('gold', 1)
-const sword = new MythItem('sword', 1)
-const chest = new MythItem('chest', 1)
+let stone = new MythItem('stone', )
+let gold = new MythItem('gold', '')
+let sword = new MythItem('sword', '')
+let chest = new MythItem('chest', '')
 
 
 //QUERIES
-const treasure = [stone, gold, sword, chest]
+let treasure = [stone, gold, sword, chest]
 const gameArea = document.querySelector("#gamearea")
 const huntermap = document.querySelectorAll('div')
 
@@ -42,26 +42,12 @@ function makeMap(hunter) {
 
 makeMap("Hunter1")
 
-// assign random number to array item = x
-
-// link array item to cel.
-// if cel is clicked, then alert score i+10
-//
-
 function burytreasure() {
     for (i = 0; i < treasure.length; i++) {
-        let x = Math.floor(Math.random(64))
-        let location = huntermap.cel.x
+        treasure[i].location = Math.floor(Math.random()*64)
+    }
 }
-}
-// function hidetreasure(treasure) {
-//     let treasurelocation = burytreasure() 
-//     console.log(treasure.name, treasurelocation)
-// }
 
-//
-// if cel.mythitem 
-//
 burytreasure()
-
+console.log(treasure)
 
