@@ -88,23 +88,17 @@ makediggable(huntermap2, 'green')
         //  reveal object and 
         //  add a score to screen
         
-
-// for (let i = 0; i < z.length; i++) { 
-//     let y = 0
-//     y = z[i].location
-// }       
-        
-        
-        
-// use css to add color to screen
+// use css to add color to screen?
+// EVENTLISTENER (event, function, usecapture)
 function puttreasureinmap(h) {
     for (i = 1; i < (width * width) + 1; i++) {
         if (h[1].location == document.getElementById('#huntermap #gridA' + h[1].location
-        )) {//&& boolean for true if selected?
+        )) {//&& boolean if eveentlistener selected = true? or if/else loop 
             console.log("you found a treasure")
         }
     }
 }
+
 // function puttreasureinmap(z) {
 //     let findingplace = 0;
 //     let groundscore = document.getElementById('#huntermap #gridA' + findingplace);
