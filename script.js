@@ -88,15 +88,35 @@ makediggable(huntermap2, 'green')
         //  reveal object and 
         //  add a score to screen
         
-// function puttreasureinmap(y, z) { 
-//     // for (i = 0; i < z.length; i++) {
-//     //     let bury = y.querySelector(`${z.location}`);
-//     //     bury.textContent = "H"
-//     // }
-// }
 
-// puttreasureinmap(huntermap, treasure)
-// puttreasureinmap(huntermap2, treasure2)
+// for (let i = 0; i < z.length; i++) { 
+//     let y = 0
+//     y = z[i].location
+// }       
+        
+        
+        
+// use css to add color to screen
+function puttreasureinmap(h) {
+    for (i = 1; i < (width * width) + 1; i++) {
+        if (h[1].location == document.getElementById('#huntermap #gridA' + h[1].location
+        )) {//&& boolean for true if selected?
+            console.log("you found a treasure")
+        }
+    }
+}
+// function puttreasureinmap(z) {
+//     let findingplace = 0;
+//     let groundscore = document.getElementById('#huntermap #gridA' + findingplace);
+//     for (let i = 0; i < z.length; i++) {
+//         if (!groundscore) {
+//             console.log(z[i].location);
+//         } else {
+//             console.log("nonefound");
+//         }
+//     }
+// }
+puttreasureinmap(treasure)
 
 
 
