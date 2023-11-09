@@ -12,7 +12,7 @@ class MythItem {
 }
 
 let stone = new MythItem('stone', 1, 1)
-let gold = new MythItem('gold', 1, 1)
+let gold = new MythItem('gold', 1, 1 )
 let sword = new MythItem('sword', 1, 1)
 let chest = new MythItem('chest', 1, 1)
 
@@ -23,7 +23,7 @@ let chest2 = new MythItem('chest', 1, 1)
 
 //-----------------arrays---------------------------
 let treasure = [stone, gold, sword, chest]
-let treasure2 = [stone2, gold2, sword2, chest2]
+// let treasure2 = [stone2, gold2, sword2, chest2]
 
 //FUNCTIONS
 //----------------makemaps---------------------------
@@ -45,7 +45,8 @@ function makeMap(hunter, mapname) {
 }
 
 makeMap("hunterA", "gridA")
-makeMap("hunterB", "gridB")
+console.log(hunterA)
+// makeMap("hunterB", "gridB")
 
 //------- assign random number to treasures------
 // parameter x refers to array (treasure or treasure2)
@@ -67,11 +68,11 @@ function burytreasure(x) {
 }
 
 burytreasure(treasure)
-burytreasure(treasure2)
+// burytreasure(treasure2)
 
-//------- add event listeners for grid boxes----------
+// ------- add event listeners for grid boxes----------
 let huntermap = document.querySelectorAll(".gridA")
-let huntermap2 = document.querySelectorAll(".gridB")
+// let huntermap2 = document.querySelectorAll(".gridB")
 
 function makediggable(usermap, digColor) {
     usermap.forEach(grid => {
@@ -82,24 +83,74 @@ function makediggable(usermap, digColor) {
 }
 
 makediggable(huntermap, 'blue')
-makediggable(huntermap2, 'green')
+
+//-------wriitng fucntion to select only diiv items that match
+//----- fucntion to select only div items that match locations---------
+function selects(k){ 
+    const a = k[0].location;
+    const b = k[1].location;
+    const c = k[2].location;
+    const d = k[3].location;
+    (console.log(a, b, c, d))
+    hunterA.querySelector(`div:nth-child(${a})`).style.backgroundColor = 'pink'
+    hunterA.querySelector(`div:nth-child(${b})`).style.backgroundColor = 'pink'
+    hunterA.querySelector(`div:nth-child(${c})`).style.backgroundColor = 'pink'
+    hunterA.querySelector(`div:nth-child(${d})`).style.backgroundColor = 'pink'
+}
+
+selects(treasure)
+
+
+
+// makediggable(huntermap2, 'green')
+
+// function putitemsinmap() { 
+//     let item = 0;
+//     let groundscore = document.querySelector('.gridA' + item)
+//         console.log(groundscore)
+//     for (let i = 0; i < z.length; i++) { 
+//         item = z[i].location
+//     //     groundscore.addEventListener('click', (e) => {
+//     //         groundscore.style.backgroundColor = coloro
+//     //     });
+//     }
+// }
+
+// putitemsinmap()
 
 //------- hide objects in hunter maps----------------
         // make hidden id for mythobject. 
         //if clicked on, 
         //  reveal object and 
         //  add a score to screen
-        
-// use css to add color to screen?
-// EVENTLISTENER (event, function, usecapture)
-function puttreasureinmap(h) {
-    for (i = 1; i < (width * width) + 1; i++) {
-        if (h[1].location == document.getElementById('#huntermap #gridA' + h[1].location
-        )) {//&& boolean if eveentlistener selected = true? or if/else loop 
-            console.log("you found a treasure")
-        }
-    }
-}
+        // use css to add color to screen?
+        // EVENTLISTENER (event, function, usecapture)
+// function puttreasureinmap(h, mip) {
+//     for (i = 1; i < (width * width) + 1; i++) {
+//         if (h[1].location == document.getElementById(mip + '#gridA' + h[1].location
+//         )) {//&& boolean if eveentlistener selected = true? or if/else loop 
+//             console.log("you found a treasure")
+//         }
+//     }
+// }
+//puttreasureinmap(treasure, huntermap)
+// use '#hunterA #gridA'
+// function makediggable(usermap, arrays, hitColor, missColor) {
+//     for (let i = 1; i < (width * width) + 1; i++) {
+//         if (arrays[1].location == document.getElementById(usermap + '#gridA' + h[1].location
+//         )) { 
+//             usermap.forEach(grid => {
+//                 grid.addEventListener('click', (e) => {
+//                     grid.style.backgroundColor = hitColor
+//                 });
+//             });
+//     usermap.forEach(grid => {
+//         grid.addEventListener('click', (e) => {
+//             grid.style.backgroundColor = hitColor
+//         });
+//     });
+// }
+
 
 // function puttreasureinmap(z) {
 //     let findingplace = 0;
@@ -112,7 +163,7 @@ function puttreasureinmap(h) {
 //         }
 //     }
 // }
-puttreasureinmap(treasure)
+
 
 
 
