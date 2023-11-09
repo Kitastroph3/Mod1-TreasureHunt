@@ -1,20 +1,24 @@
 //creating objects (origins of mythical objects):
 class MythItem { 
-    constructor(name, location) { 
+    constructor(name, location, size) { 
         this.name = name
         this.location = location
+        this.size = size
+    }
+    beuncovered() { 
+        this.location = 0
     }
 }
 
-let stone = new MythItem('stone', 1)
-let gold = new MythItem('gold', 1)
-let sword = new MythItem('sword', 1)
-let chest = new MythItem('chest', 1)
+let stone = new MythItem('stone', 1, 1)
+let gold = new MythItem('gold', 1, 1)
+let sword = new MythItem('sword', 1, 1)
+let chest = new MythItem('chest', 1, 1)
 
-let stone2 = new MythItem('stone', 1)
-let gold2 = new MythItem('gold', 1)
-let sword2 = new MythItem('sword', 1)
-let chest2 = new MythItem('chest', 1)
+let stone2 = new MythItem('stone', 1, 1)
+let gold2 = new MythItem('gold', 1, 1)
+let sword2 = new MythItem('sword', 1, 1)
+let chest2 = new MythItem('chest', 1, 1)
 
 let treasure = [stone, gold, sword, chest]
 let treasure2 = [stone2, gold2, sword2, chest2]
@@ -44,7 +48,7 @@ makeMap("hunterB", "gridB")
 //------- assign random number to treasures------
 // parameter x refers to array (treasure or treasure2)
 function burytreasure(x) {
-    for (i = 0; i < treasure.length; i++) {
+    for (let i = 0; i < x.length; i++) {
         x[i].location = Math.floor(Math.random() * 64)
     }
     //make sure each treasure location is unique
@@ -79,16 +83,22 @@ makediggable(huntermap, 'blue')
 makediggable(huntermap2, 'green')
 
 //------- hide objects in hunter maps----------------
-
-function puttreasureinmap() { 
-    for (i = 0; i < treasure.length; i++) {
-        treasure[i].location
         // make hidden id for mythobject. 
         //if clicked on, 
         //  reveal object and 
         //  add a score to screen
-    }
-}
+        
+// function puttreasureinmap(y, z) { 
+//     // for (i = 0; i < z.length; i++) {
+//     //     let bury = y.querySelector(`${z.location}`);
+//     //     bury.textContent = "H"
+//     // }
+// }
+
+// puttreasureinmap(huntermap, treasure)
+// puttreasureinmap(huntermap2, treasure2)
+
+
 
 //------ make computer "go"--------------------------
 
@@ -96,7 +106,7 @@ function puttreasureinmap() {
 
 
 
-//------ make sure round is valid - new item is selected)----
+//------ make sure round is valid - newmap item is selected)----
 
 
 
