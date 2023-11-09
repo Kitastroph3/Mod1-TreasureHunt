@@ -1,4 +1,5 @@
-//creating objects (origins of mythical objects):
+//MAKE OBJECTS
+//---creating objects (origins of mythical objects):
 class MythItem { 
     constructor(name, location, size) { 
         this.name = name
@@ -20,6 +21,7 @@ let gold2 = new MythItem('gold', 1, 1)
 let sword2 = new MythItem('sword', 1, 1)
 let chest2 = new MythItem('chest', 1, 1)
 
+//-----------------arrays---------------------------
 let treasure = [stone, gold, sword, chest]
 let treasure2 = [stone2, gold2, sword2, chest2]
 
