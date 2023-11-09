@@ -38,7 +38,7 @@ body {
     background-color: grey;
 } 
 
-.gridA:hover, .gridB:hover {
+.gridA:hover {
     cursor: grab;
     background-color: red;
 } 

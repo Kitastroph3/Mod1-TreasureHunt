@@ -72,7 +72,7 @@ burytreasure(treasure)
 burytreasure(treasure2)
 
 // ------- add event listeners for grid boxes----------
-let huntermap = document.querySelectorAll(".gridA")
+let hunterAmap = document.querySelectorAll(".gridA")
 // let huntermap2 = document.querySelectorAll(".gridB")
 
 function makediggable(usermap, digColor) {
@@ -83,11 +83,11 @@ function makediggable(usermap, digColor) {
     });
 }
 
-makediggable(huntermap, 'blue')
+makediggable(hunterAmap, 'blue')
 
-//-------wriitng fucntion to select only div items that match
-//----- fucntion to select only div items that match locations---------
-function selectsA(k, mapinput) {
+//-------writing fucntion to select only div items that match
+//----- function to select only div items that match locations---------
+function hideitems(k, mapinput) {
     const a = k[0].location;
     const b = k[1].location;
     const c = k[2].location;
@@ -100,12 +100,28 @@ function selectsA(k, mapinput) {
         mapinput.querySelector(`div:nth-child(${d})`).style.backgroundColor = 'pink'
     }
 
-selectsA(treasure2, hunterB)
+hideitems(treasure2, hunterB)
+//------------change color-------------------//
+function selectsA(k, mapinput) {
+    const a = k[0].location;
+    const b = k[1].location;
+    const c = k[2].location;
+    const d = k[3].location;
+    (console.log(a, b, c, d))
 
+    const boxA = mapinput.querySelector(`div:nth-child(${a})`)
+    boxA.addEventListener('click', () => {style.backgroundColor = "pink" })
+    const boxB = mapinput.querySelector(`div:nth-child(${b})`)
+    boxB.classList.add('hit')
+    const boxC = mapinput.querySelector(`div:nth-child(${c})`)
+    boxC.classList.add('hit')
+    const boxD = mapinput.querySelector(`div:nth-child(${d})`)
+    boxD.classList.add('hit')
 
-
-// makediggable(huntermap2, 'green')
-
+}
+selectsA(treasure, hunterA)
+// function changecolorhit(target, color) {     
+// }
 // function selectsA(k, mapinput, digColor) {
 //     const a = k[0].location;
 //     const b = k[1].location;
