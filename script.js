@@ -23,7 +23,7 @@ let chest2 = new MythItem('chest', 1, 1)
 
 //-----------------arrays---------------------------
 let treasure = [stone, gold, sword, chest]
-// let treasure2 = [stone2, gold2, sword2, chest2]
+let treasure2 = [stone2, gold2, sword2, chest2]
 
 //FUNCTIONS
 //----------------makemaps---------------------------
@@ -46,13 +46,14 @@ function makeMap(hunter, mapname) {
 
 makeMap("hunterA", "gridA")
 console.log(hunterA)
-// makeMap("hunterB", "gridB")
+makeMap("hunterB", "gridB")
+console.log(hunterB)
 
 //------- assign random number to treasures------
 // parameter x refers to array (treasure or treasure2)
 function burytreasure(x) {
     for (let i = 0; i < x.length; i++) {
-        x[i].location = Math.floor(Math.random() * 64)
+        x[i].location = Math.ceil(Math.random() * 64)
     }
     //make sure each treasure location is unique
     if (x[0].location != x[1].location &&
@@ -63,12 +64,12 @@ function burytreasure(x) {
         x[2].location != x[3].location) {
         console.log(x)
     } else {
-        burytreasure()
+        burytreasure(x)
     }
 }
 
 burytreasure(treasure)
-// burytreasure(treasure2)
+burytreasure(treasure2)
 
 // ------- add event listeners for grid boxes----------
 let huntermap = document.querySelectorAll(".gridA")
@@ -84,97 +85,58 @@ function makediggable(usermap, digColor) {
 
 makediggable(huntermap, 'blue')
 
-//-------wriitng fucntion to select only diiv items that match
+//-------wriitng fucntion to select only div items that match
 //----- fucntion to select only div items that match locations---------
-function selects(k){ 
+function selectsA(k, mapinput) {
     const a = k[0].location;
     const b = k[1].location;
     const c = k[2].location;
     const d = k[3].location;
     (console.log(a, b, c, d))
-    hunterA.querySelector(`div:nth-child(${a})`).style.backgroundColor = 'pink'
-    hunterA.querySelector(`div:nth-child(${b})`).style.backgroundColor = 'pink'
-    hunterA.querySelector(`div:nth-child(${c})`).style.backgroundColor = 'pink'
-    hunterA.querySelector(`div:nth-child(${d})`).style.backgroundColor = 'pink'
-}
 
-selects(treasure)
+        mapinput.querySelector(`div:nth-child(${a})`).style.backgroundColor = 'pink'
+        mapinput.querySelector(`div:nth-child(${b})`).style.backgroundColor = 'pink'
+        mapinput.querySelector(`div:nth-child(${c})`).style.backgroundColor = 'pink'
+        mapinput.querySelector(`div:nth-child(${d})`).style.backgroundColor = 'pink'
+    }
+
+selectsA(treasure2, hunterB)
 
 
 
 // makediggable(huntermap2, 'green')
 
-// function putitemsinmap() { 
-//     let item = 0;
-//     let groundscore = document.querySelector('.gridA' + item)
-//         console.log(groundscore)
-//     for (let i = 0; i < z.length; i++) { 
-//         item = z[i].location
-//     //     groundscore.addEventListener('click', (e) => {
-//     //         groundscore.style.backgroundColor = coloro
-//     //     });
-//     }
-// }
+// function selectsA(k, mapinput, digColor) {
+//     const a = k[0].location;
+//     const b = k[1].location;
+//     const c = k[2].location;
+//     const d = k[3].location;
+//     (console.log(a, b, c, d))
 
-// putitemsinmap()
+//     const boxA = mapinput.querySelector(`div:nth-child(${a})`)
+//     boxA.classList.remove('miss')
+//     const boxB = mapinput.querySelector(`div:nth-child(${b})`)
+//     boxB.classList.remove('miss')
+//     const boxC = mapinput.querySelector(`div:nth-child(${c})`)
+//     boxC.classList.remove('miss')
+//     const boxD = mapinput.querySelector(`div:nth-child(${d})`)
+//     boxD.classList.remove('miss')
 
-//------- hide objects in hunter maps----------------
-        // make hidden id for mythobject. 
-        //if clicked on, 
-        //  reveal object and 
-        //  add a score to screen
-        // use css to add color to screen?
-        // EVENTLISTENER (event, function, usecapture)
-// function puttreasureinmap(h, mip) {
-//     for (i = 1; i < (width * width) + 1; i++) {
-//         if (h[1].location == document.getElementById(mip + '#gridA' + h[1].location
-//         )) {//&& boolean if eveentlistener selected = true? or if/else loop 
-//             console.log("you found a treasure")
-//         }
-//     }
-// }
-//puttreasureinmap(treasure, huntermap)
-// use '#hunterA #gridA'
-// function makediggable(usermap, arrays, hitColor, missColor) {
-//     for (let i = 1; i < (width * width) + 1; i++) {
-//         if (arrays[1].location == document.getElementById(usermap + '#gridA' + h[1].location
-//         )) { 
-//             usermap.forEach(grid => {
-//                 grid.addEventListener('click', (e) => {
-//                     grid.style.backgroundColor = hitColor
-//                 });
-//             });
-//     usermap.forEach(grid => {
-//         grid.addEventListener('click', (e) => {
-//             grid.style.backgroundColor = hitColor
+//     let map = document.querySelectorAll(".miss")
+//     map.forEach(grid => {
+//         map.addEventListener('click', (e) => {
+//             grid.style.backgroundColor = digColor
 //         });
 //     });
 // }
-
-
-// function puttreasureinmap(z) {
-//     let findingplace = 0;
-//     let groundscore = document.getElementById('#huntermap #gridA' + findingplace);
-//     for (let i = 0; i < z.length; i++) {
-//         if (!groundscore) {
-//             console.log(z[i].location);
-//         } else {
-//             console.log("nonefound");
-//         }
-//     }
-// }
-
-
+//------- hide objects in hunter maps----------------
 
 
 //------ make computer "go"--------------------------
 
 
 
-
-
 //------ make sure round is valid - newmap item is selected)----
-
 
 
 //------ check to make sure gameplay still = true
