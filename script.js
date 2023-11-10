@@ -6,9 +6,6 @@ class MythItem {
         this.location = location
         this.size = size
     }
-    beuncovered() { 
-        this.location = 0
-    }
 }
 
 let stone = new MythItem('stone', 1, 1)
@@ -109,43 +106,76 @@ function makediggable(usermap, digColor) {
     });
 }
 
-makediggable(hunterAmissmap, 'blue')
+makediggable(hunterAmissmap, 'darkslategrey')
 makediggable(hunterAhitmap, 'gold')
 //----- function to show items on opponent map---------
-function hideitems(k, mapinput) {
-    const a = k[0].location;
-    const b = k[1].location;
-    const c = k[2].location;
-    const d = k[3].location;
-    
-    const locatearray = [a, b, c, d]
+const a = treasure2[0].location;
+const b = treasure2[1].location;
+const c = treasure2[2].location;
+const d = treasure2[3].location;
 
-    console.log(locatearray)
+const locatearray = [a, b, c, d]
 
-    for (let i = 0; i < 4; i++)
+console.log(locatearray)
+
+function hideitems(mapinput) {
+    for (let i = 0; i < locatearray.length; i++) {
         mapinput.querySelector(`div:nth-child(${locatearray[i]})`).style.backgroundColor = 'pink'
+    }
 }
-
-hideitems(treasure2, hunterB)
-//------ detect input from player -------------------
-let hunterAmap = document.querySelectorAll('div')
-function makehitalert(mappy) { 
-    mappy.forEach(grid => {
-        grid.addEventListener('click', (e) => {
-           alert("You found a treasure!")
-        });
-    });
-}
-
-// makehitalert(hunterAhitmap
+hideitems(hunterB)
 
 //------ make computer "go"--------------------------
+let rando = Math.ceil(Math.random() * 64)
+function computerturn(h) {
+    for (let i = 0; i < locatearray.length; i++) {
+        if (rando == locatearray[i]) {
+            h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'purple'
+            console.log(rando)
+        } else {
+            h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'darkslategray'
+            console.log(rando)
+        }
+    }
+}
+computerturn(hunterB)
 
+//------ detect input from player -------------------------
+let hunterAmap = document.getElementById('hunterA')
 
+hunterAmap.addEventListener('click', (e) => {
+    if (e.target.classList.contains('hit')) {
+        console.log("hit")
+        // computerturn()
+    } else { 
+        console.log("miss")
+        // computerturn()
+    }
+})
 
-//------ make sure round is valid--------------------
+// hunterAmap.addEventListener('click', (e) => {
+// if (e.target.classList.contains('hit')) {
+//     console.log("hit")
+//     e.target.classList.removeEventListener
+//     // computerturn()
+// } else { 
+//     console.log("miss")
+    // computerturn()
+// }
+// })
 
+//     hunterAmap.forEach(gridclicked => {
+//         gridclicked.addEventListener('click', (e) => {trackclicks(gridclicked.id)});
+//     });
 
+// captureevent(hunterAmap)
+//---------- track clicked elements------------
+// let clickedarray = [];
+// function clickondivs(e) { 
+//     let divitem = hunterAmap.queryselector();
+//     clickedarray.push(id)
+
+// }
 //------ check to make sure gameplay still = true
 //------ over if all objects are not found by either map1 or map2---
 

@@ -8,11 +8,10 @@ body {
     text-align: center;
 }
 
-#scores {
+#rounds {
     display: flex;
     width: 80%;    
-    justify-content: space-around;    
-    background-color: rgba(108, 75, 10, 0.73);    
+    justify-content: space-around;      
     padding: 2%;
 }
 
