@@ -102,6 +102,7 @@ function makediggable(usermap, digColor) {
     usermap.forEach(grid => {
         grid.addEventListener('click', (e) => {
             grid.style.backgroundColor = digColor
+
         });
     });
 }
@@ -126,8 +127,9 @@ function hideitems(mapinput) {
 hideitems(hunterB)
 
 //------ make computer "go"--------------------------
-let rando = Math.ceil(Math.random() * 64)
+
 function computerturn(h) {
+    let rando = Math.ceil(Math.random() * 64)
     for (let i = 0; i < locatearray.length; i++) {
         if (rando == locatearray[i]) {
             h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'purple'
@@ -146,24 +148,20 @@ let hunterAmap = document.getElementById('hunterA')
 hunterAmap.addEventListener('click', (e) => {
     if (e.target.classList.contains('hit')) {
         console.log("hit")
-        // computerturn()
     } else { 
         console.log("miss")
-        // computerturn()
     }
 })
-
-// hunterAmap.addEventListener('click', (e) => {
-// if (e.target.classList.contains('hit')) {
-//     console.log("hit")
-//     e.target.classList.removeEventListener
-//     // computerturn()
-// } else { 
-//     console.log("miss")
-    // computerturn()
-// }
-// })
-
+//--------Alternate Turns-----------------------------------
+hunterAmap.addEventListener('click', (e) => {
+    if (e.target.classList.contains('hit')) {
+        computerturn(hunterB)
+    } else { 
+        computerturn(hunterB)
+    }
+    })
+//----------------------------------------------------------
+// hunterAmap.
 //     hunterAmap.forEach(gridclicked => {
 //         gridclicked.addEventListener('click', (e) => {trackclicks(gridclicked.id)});
 //     });
@@ -178,7 +176,3 @@ hunterAmap.addEventListener('click', (e) => {
 // }
 //------ check to make sure gameplay still = true
 //------ over if all objects are not found by either map1 or map2---
-
-
-
-
