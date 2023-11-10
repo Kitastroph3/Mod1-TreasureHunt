@@ -127,17 +127,15 @@ function hideitems(mapinput) {
 hideitems(hunterB)
 
 //------ make computer "go"--------------------------
-
 function computerturn(h) {
     let rando = Math.ceil(Math.random() * 64)
-    for (let i = 0; i < locatearray.length; i++) {
-        if (rando == locatearray[i]) {
+        if (rando == locatearray[0] || rando == locatearray[1] || rando == locatearray[2] || rando == locatearray[3]) {
             h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'purple'
             console.log(rando)
         } else {
             h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'darkslategray'
             console.log(rando)
-        }
+        
     }
 }
 computerturn(hunterB)
@@ -161,7 +159,11 @@ hunterAmap.addEventListener('click', (e) => {
     }
     })
 //----------------------------------------------------------
-// hunterAmap.
+// hunterAmap.removeEventListener('click', (e) => { 
+//     if (e.target.classList.contains('hit')) {
+
+//     }
+// })
 //     hunterAmap.forEach(gridclicked => {
 //         gridclicked.addEventListener('click', (e) => {trackclicks(gridclicked.id)});
 //     });
