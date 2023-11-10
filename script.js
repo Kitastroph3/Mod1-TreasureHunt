@@ -30,7 +30,7 @@ let treasure2 = [stone2, gold2, sword2, chest2]
 const gameArea = document.querySelector("#gamearea")
 const width = 8
 
-function makeMap(hunter, mapname) {
+function makeMap(hunter, mapname, miss) {
     const map = document.createElement('div')
     map.id = hunter
     map.classList.add('map')
@@ -39,12 +39,13 @@ function makeMap(hunter, mapname) {
     for (let i = 0; i < width * width; i++) { 
         const cel = document.createElement('div')
         cel.classList.add(mapname)
+        cel.classList.add(miss)
         cel.id = i+1
         map.append(cel)
     }
 }
 
-makeMap("hunterA", "gridA")
+makeMap("hunterA", "gridA", "miss")
 console.log(hunterA)
 makeMap("hunterB", "gridB")
 console.log(hunterB)
@@ -71,77 +72,59 @@ function burytreasure(x) {
 burytreasure(treasure)
 burytreasure(treasure2)
 
-// ------- add event listeners for grid boxes----------
-// let hunterAmap = document.querySelectorAll(".gridA")
+// ------- add event listeners for player boxes----------
+
 // let huntermap2 = document.querySelectorAll(".gridB")
+    const aa = treasure[0].location;
+    const bb = treasure[1].location;
+    const cc = treasure[2].location;
+    const dd = treasure[3].location;
 
-// function makediggable(usermap, digColor) {
-//     usermap.forEach(grid => {
-//         grid.addEventListener('click', (e) => {
-//             grid.style.backgroundColor = digColor
-//         });
-//     });
-// }
+    const boxA = hunterA.querySelector(`div:nth-child(${aa})`)
+    boxA.classList.remove('miss')
+    boxA.classList.add('hit')
+    const boxB = hunterA.querySelector(`div:nth-child(${bb})`)
+    boxB.classList.remove('miss')
+    boxB.classList.add('hit')
+    const boxC = hunterA.querySelector(`div:nth-child(${cc})`)
+    boxC.classList.remove('miss')
+    boxC.classList.add('hit')
+    const boxD = hunterA.querySelector(`div:nth-child(${dd})`)
+    boxD.classList.remove('miss')
+    boxD.classList.add('hit')
 
-// makediggable(hunterAmap, 'blue')
+let hunterAmap = document.querySelectorAll("div.miss")    
+let hunterAhitmap = document.querySelectorAll("div.hit")
 
-//-------writing fucntion to select only div items that match
-//----- function to select only div items that match locations---------
+function makediggable(usermap, digColor) {
+    usermap.forEach(grid => {
+        grid.addEventListener('click', (e) => {
+            grid.style.backgroundColor = digColor
+        });
+    });
+}
+
+makediggable(hunterAmap, 'blue')
+makediggable(hunterAhitmap, 'gold')
+
+//----- function to select items on opponent map---------
 function hideitems(k, mapinput) {
     const a = k[0].location;
     const b = k[1].location;
     const c = k[2].location;
     const d = k[3].location;
-    (console.log(a, b, c, d))
+    
+    const locatearray = [a, b, c, d]
 
-        mapinput.querySelector(`div:nth-child(${a})`).style.backgroundColor = 'pink'
-        mapinput.querySelector(`div:nth-child(${b})`).style.backgroundColor = 'pink'
-        mapinput.querySelector(`div:nth-child(${c})`).style.backgroundColor = 'pink'
-        mapinput.querySelector(`div:nth-child(${d})`).style.backgroundColor = 'pink'
-    }
+    console.log(locatearray)
+
+    for (let i = 0; i < 4; i++)
+        mapinput.querySelector(`div:nth-child(${locatearray[i]})`).style.backgroundColor = 'pink'
+}
 
 hideitems(treasure2, hunterB)
 //------------change color-------------------//
-function selectsA(k, mapinput) {
-    const a = k[0].location;
-    const b = k[1].location;
-    const c = k[2].location;
-    const d = k[3].location;
-    (console.log(a, b, c, d))
 
-    mapinput.querySelector(`div:nth-child(${a})`).addEventListener('click',(e) => {div.textContent = "X"})
-    mapinput.querySelector(`div:nth-child(${b})`).addEventListener('click',(e) => {div.textContent = "X"})
-    const boxC = mapinput.querySelector(`div:nth-child(${c})`)
-    boxC.addEventListener('click',(e) => {boxC.textContent = "X"})
-    const boxD = mapinput.querySelector(`div:nth-child(${d})`)
-    boxD.addEventListener('click',(e) => {boxD.textContent = "X"})
-}
-selectsA(treasure, hunterA)
-// function changecolorhit(target, color) {     
-// }
-// function selectsA(k, mapinput, digColor) {
-//     const a = k[0].location;
-//     const b = k[1].location;
-//     const c = k[2].location;
-//     const d = k[3].location;
-//     (console.log(a, b, c, d))
-
-//     const boxA = mapinput.querySelector(`div:nth-child(${a})`)
-//     boxA.classList.remove('miss')
-//     const boxB = mapinput.querySelector(`div:nth-child(${b})`)
-//     boxB.classList.remove('miss')
-//     const boxC = mapinput.querySelector(`div:nth-child(${c})`)
-//     boxC.classList.remove('miss')
-//     const boxD = mapinput.querySelector(`div:nth-child(${d})`)
-//     boxD.classList.remove('miss')
-
-//     let map = document.querySelectorAll(".miss")
-//     map.forEach(grid => {
-//         map.addEventListener('click', (e) => {
-//             grid.style.backgroundColor = digColor
-//         });
-//     });
-// }
 //------- hide objects in hunter maps----------------
 
 
