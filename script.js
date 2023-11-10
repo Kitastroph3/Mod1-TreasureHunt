@@ -129,13 +129,17 @@ hideitems(hunterB)
 //------ make computer "go"--------------------------
 function computerturn(h) {
     let rando = Math.ceil(Math.random() * 64)
+    if (h.querySelector(`div:nth-child(${rando})`).style.backgroundColor != 'purple' &&
+        h.querySelector(`div:nth-child(${rando})`).style.backgroundColor != 'darkslategray') {
         if (rando == locatearray[0] || rando == locatearray[1] || rando == locatearray[2] || rando == locatearray[3]) {
             h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'purple'
             console.log(rando)
         } else {
             h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'darkslategray'
             console.log(rando)
-        
+        }
+    } else {
+        computerturn(h)
     }
 }
 computerturn(hunterB)
