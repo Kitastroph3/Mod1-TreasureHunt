@@ -22,8 +22,8 @@ let sword2 = new MythItem('sword', 1, 1)
 let chest2 = new MythItem('chest', 1, 1)
 
 //-----------------arrays---------------------------
-let treasure = [stone, gold, sword, chest]
-let treasure2 = [stone2, gold2, sword2, chest2]
+const treasure = [stone, gold, sword, chest]
+const treasure2 = [stone2, gold2, sword2, chest2]
 
 //FUNCTIONS
 //----------------makemaps---------------------------
@@ -72,28 +72,33 @@ function burytreasure(x) {
 burytreasure(treasure)
 burytreasure(treasure2)
 
-// ------- add event listeners for player boxes----------
+// ------- Event listeners for player boxes----------
+//-------Define boxes to have color if uncovered -------------------
+const aa = treasure[0].location;
+const bb = treasure[1].location;
+const cc = treasure[2].location;
+const dd = treasure[3].location;
 
-// let huntermap2 = document.querySelectorAll(".gridB")
-    const aa = treasure[0].location;
-    const bb = treasure[1].location;
-    const cc = treasure[2].location;
-    const dd = treasure[3].location;
+const playerlocatearray = [aa, bb, cc, dd]
+console.log(playerlocatearray)
 
-    const boxA = hunterA.querySelector(`div:nth-child(${aa})`)
-    boxA.classList.remove('miss')
-    boxA.classList.add('hit')
-    const boxB = hunterA.querySelector(`div:nth-child(${bb})`)
-    boxB.classList.remove('miss')
-    boxB.classList.add('hit')
-    const boxC = hunterA.querySelector(`div:nth-child(${cc})`)
-    boxC.classList.remove('miss')
-    boxC.classList.add('hit')
-    const boxD = hunterA.querySelector(`div:nth-child(${dd})`)
-    boxD.classList.remove('miss')
-    boxD.classList.add('hit')
+const boxA = hunterA.querySelector(`div:nth-child(${aa})`)
+const boxB = hunterA.querySelector(`div:nth-child(${bb})`)
+const boxC = hunterA.querySelector(`div:nth-child(${cc})`)
+const boxD = hunterA.querySelector(`div:nth-child(${dd})`)
+    
+const arrayofBoxLocation = [boxA, boxB, boxC, boxD]
+    
+function giveDifferentColor(boxLocation) {
+    for (let i = 0; i < boxLocation.length; i++)
+        boxLocation[i].classList.remove('miss')
+    for (let i = 0; i < boxLocation.length; i++)
+        boxLocation[i].classList.add('hit')    //would not work if add function followed remove in same loop
 
-let hunterAmap = document.querySelectorAll("div.miss")    
+}
+giveDifferentColor(arrayofBoxLocation)
+//------Define boxes to have different colors for hit/miss----------------
+let hunterAmissmap = document.querySelectorAll("div.miss")    
 let hunterAhitmap = document.querySelectorAll("div.hit")
 
 function makediggable(usermap, digColor) {
@@ -104,10 +109,9 @@ function makediggable(usermap, digColor) {
     });
 }
 
-makediggable(hunterAmap, 'blue')
+makediggable(hunterAmissmap, 'blue')
 makediggable(hunterAhitmap, 'gold')
-
-//----- function to select items on opponent map---------
+//----- function to show items on opponent map---------
 function hideitems(k, mapinput) {
     const a = k[0].location;
     const b = k[1].location;
@@ -123,16 +127,23 @@ function hideitems(k, mapinput) {
 }
 
 hideitems(treasure2, hunterB)
-//------------change color-------------------//
+//------ detect input from player -------------------
+let hunterAmap = document.querySelectorAll('div')
+function makehitalert(mappy) { 
+    mappy.forEach(grid => {
+        grid.addEventListener('click', (e) => {
+           alert("You found a treasure!")
+        });
+    });
+}
 
-//------- hide objects in hunter maps----------------
-
+// makehitalert(hunterAhitmap
 
 //------ make computer "go"--------------------------
 
 
 
-//------ make sure round is valid - newmap item is selected)----
+//------ make sure round is valid--------------------
 
 
 //------ check to make sure gameplay still = true
