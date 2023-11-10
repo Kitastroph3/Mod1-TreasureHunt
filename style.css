@@ -8,13 +8,6 @@ body {
     text-align: center;
 }
 
-#rounds {
-    display: flex;
-    width: 80%;    
-    justify-content: space-around;      
-    padding: 2%;
-}
-
 #gamearea {
     display: flex;
     width: 80%;

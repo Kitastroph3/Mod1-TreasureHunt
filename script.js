@@ -129,6 +129,7 @@ hideitems(hunterB)
 //------ make computer "go"--------------------------
 function computerturn(h) {
     let rando = Math.ceil(Math.random() * 64)
+//-- make sure every turn is at unique location-----------------------
     if (h.querySelector(`div:nth-child(${rando})`).style.backgroundColor != 'purple' &&
         h.querySelector(`div:nth-child(${rando})`).style.backgroundColor != 'darkslategray') {
         if (rando == locatearray[0] || rando == locatearray[1] || rando == locatearray[2] || rando == locatearray[3]) {
@@ -142,7 +143,6 @@ function computerturn(h) {
         computerturn(h)
     }
 }
-computerturn(hunterB)
 
 //------ detect input from player -------------------------
 let hunterAmap = document.getElementById('hunterA')
@@ -154,7 +154,7 @@ hunterAmap.addEventListener('click', (e) => {
         console.log("miss")
     }
 })
-//--------Alternate Turns-----------------------------------
+//--------ROUNDS/ Alternate turns--------------------------
 hunterAmap.addEventListener('click', (e) => {
     if (e.target.classList.contains('hit')) {
         computerturn(hunterB)
@@ -162,23 +162,4 @@ hunterAmap.addEventListener('click', (e) => {
         computerturn(hunterB)
     }
     })
-//----------------------------------------------------------
-// hunterAmap.removeEventListener('click', (e) => { 
-//     if (e.target.classList.contains('hit')) {
-
-//     }
-// })
-//     hunterAmap.forEach(gridclicked => {
-//         gridclicked.addEventListener('click', (e) => {trackclicks(gridclicked.id)});
-//     });
-
-// captureevent(hunterAmap)
-//---------- track clicked elements------------
-// let clickedarray = [];
-// function clickondivs(e) { 
-//     let divitem = hunterAmap.queryselector();
-//     clickedarray.push(id)
-
-// }
-//------ check to make sure gameplay still = true
-//------ over if all objects are not found by either map1 or map2---
+//--------Win State/Lose state-----------------------------
