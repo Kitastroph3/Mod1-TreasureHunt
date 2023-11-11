@@ -142,7 +142,6 @@ function tracking() {
     rounds.innerText = `Round: ${round}`
 }
 //----------------------------------------------------------
-
 //------ make computer "go"--------------------------
 let computergridtrack = []
 function computerturn(h) {
@@ -180,14 +179,17 @@ autoRound()
 //--------Win State/Lose state-----------------------------
 function winlose() {
     let playergridtracktonumber = playergridtrack.map(Number)
-    for (let i = 0; i < playergridtracktonumber.length; i++) {
+    // for (let i = 0; i < playergridtracktonumber.length; i++) {
         if (playergridtracktonumber.includes(playerlocatearray[0]) && playergridtracktonumber.includes(playerlocatearray[1]) && playergridtracktonumber.includes(playerlocatearray[2]) && playergridtracktonumber.includes(playerlocatearray[3])) {
             console.log("you win!")
+            alert("You found all the mythical items!")
+            location.reload()
         } else if (computergridtrack.includes(computerlocatearray[0]) && computergridtrack.includes(computerlocatearray[1]) && computergridtrack.includes(computerlocatearray[2]) && computergridtrack.includes(computerlocatearray[3])) {
             console.log("computer wins!")
+            alert("The computer found all the items before you!")
+            location.reload()
         } else { 
             console.log(round)
         }
     }
-} 
-// ------------------
+// ------Add restart button-------
