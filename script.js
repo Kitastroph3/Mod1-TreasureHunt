@@ -140,6 +140,7 @@ function tracking() {
     round++;
 }
 //------ make computer "go"--------------------------
+let computergridtrack = []
 function computerturn(h) {
     let rando = Math.ceil(Math.random() * 64)
     //-- make sure every turn is at unique location-----------------------
@@ -148,8 +149,10 @@ function computerturn(h) {
         //would not work with a loop :'()
         if (rando == computerlocatearray[0] || rando == computerlocatearray[1] || rando == computerlocatearray[2] || rando == computerlocatearray[3]) {
             h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'purple'
+            computergridtrack.push(rando)
         } else {
             h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'darkslategray'
+            computergridtrack.push(rando)
         }
     } else {
         computerturn(h)
@@ -163,13 +166,29 @@ function autoRound() {
             tracking()
             console.log(round)
             console.log(playergridtrack)
+            console.log(computergridtrack)
+            winlose()
         } else {
             computerturn(hunterB)
             tracking()
             console.log(round)
             console.log(playergridtrack)
+            console.log(computergridtrack)
+            winlose()
         } 
     })
 }
 autoRound()
 //--------Win State/Lose state-----------------------------
+function winlose() {
+    let playergridtracktonumber = playergridtrack.map(Number)
+    for (let i = 0; i < playergridtracktonumber.length; i++) {
+        if (playergridtracktonumber.every(playerlocatearray) == 1) {
+            console.log("you win!")
+        } else if (computergridtrack.every(computerlocatearray) == 1) {
+            console.log("computer wins!")
+        } else { 
+            console.log("game still in play")
+        }
+    }
+}
