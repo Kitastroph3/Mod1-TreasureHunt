@@ -43,8 +43,7 @@ function makeMap(hunter, mapname) {
 
 makeMap("hunterA", "gridA")
 makeMap("hunterB", "gridB")
-console.log(hunterA)
-console.log(hunterB)
+
 //------- assign random number to treasures---------------
 // parameter x refers to array (treasure or treasure2)
 function burytreasure(x) {
@@ -135,10 +134,15 @@ hunterAmap.addEventListener('click', (e) => {
         playergridtrack.push(e.target.id)
     })
 //----------------------------------------------------------
+const rounds = document.createElement('h3')
 let round = 0;
-function tracking() { 
-    round++;
+document.querySelector('header').appendChild(rounds)
+function tracking() {
+    round++
+    rounds.innerText = `Round: ${round}`
 }
+//----------------------------------------------------------
+
 //------ make computer "go"--------------------------
 let computergridtrack = []
 function computerturn(h) {
@@ -163,18 +167,12 @@ function autoRound() {
     hunterAmap.addEventListener('click', (e) => {
         if (e.target.classList.contains('hit')) {
             computerturn(hunterB)
-            tracking()
-            console.log(round)
-            console.log(playergridtrack)
-            console.log(computergridtrack)
             winlose()
+            tracking()
         } else {
             computerturn(hunterB)
-            tracking()
-            console.log(round)
-            console.log(playergridtrack)
-            console.log(computergridtrack)
             winlose()
+            tracking()
         } 
     })
 }
@@ -183,12 +181,13 @@ autoRound()
 function winlose() {
     let playergridtracktonumber = playergridtrack.map(Number)
     for (let i = 0; i < playergridtracktonumber.length; i++) {
-        if (playergridtracktonumber.every(playerlocatearray) == 1) {
+        if (playergridtracktonumber.includes(playerlocatearray[0]) && playergridtracktonumber.includes(playerlocatearray[1]) && playergridtracktonumber.includes(playerlocatearray[2]) && playergridtracktonumber.includes(playerlocatearray[3])) {
             console.log("you win!")
-        } else if (computergridtrack.every(computerlocatearray) == 1) {
+        } else if (computergridtrack.includes(computerlocatearray[0]) && computergridtrack.includes(computerlocatearray[1]) && computergridtrack.includes(computerlocatearray[2]) && computergridtrack.includes(computerlocatearray[3])) {
             console.log("computer wins!")
         } else { 
-            console.log("game still in play")
+            console.log(round)
         }
     }
-}
+} 
+// ------------------
