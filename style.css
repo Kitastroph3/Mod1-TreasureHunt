@@ -2,25 +2,39 @@
     font-family: treasure;
     src: url(treasure.ttf);
 }
+/* This font is freeware, distribute freely, but do NOT sell the font in any way. Use the font for non-commercial use only! If you like to use the font in any commercial way, contact me before doing so!
+Website : http://www.pizzadude.dk Contact :  pizzadude@pizzadude.dk Have fun and enjoy! * Jakob Fischer / PizzaDude
+Always include this text file when distributing the font < */
+
+@font-face {
+    font-family: treasuremap;
+    src: url(treasuremap.ttf);
+}
+/* Designed by JanneVu. https://www.fontspace.com/treasure-map-font-f40513 */
 
 body {
     background-color: rgb(165, 180, 148);
     background-image: url(background.jpg);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: auto;
     background-size: cover;
-    font-family: treasure;
+    font-family: Verdana;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
+/* Image made using perchance.org/ai-photo-generator */
+
+header {
+    margin-top: 5%;
+}
 
 #gamearea {
     display: flex;
     width: 80%;
-    background-color: rgba(116, 99, 15, 0.472);
+    background-color: rgba(49, 35, 9, 0.703);
     justify-content: space-evenly;
     align-items: center;
     height: auto;
@@ -49,18 +63,37 @@ body {
 
 .gridA:hover {
     cursor: grab;
-    background-color: red;
+    background-color: rgb(99, 41, 41);
 } 
 
 section {
-    padding: 2%
+    padding: 2%;
+    margin-bottom: 0%;
+}
+
+.gridA.hit, .gridB.hit {
+    font-family: treasuremap;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    padding: 2%;
+    font-size: larger;
 }
 
 h1 {
-    font-size: 40pt;
+    font-size: 30pt;
     margin-bottom: 0;
+    font-family: treasuremap;
 }
 
-h3 {
-    font-family: 'Times New Roman', Times, serif
+button {
+    margin-left: 35px;
+    margin-right: 35px;
+    font-size: 12pt;
+    margin-top: 5%;
+}
+
+#aboutbox {
+    display: none; 
+    position: fixed;
+    background-color: whitesmoke;
 }

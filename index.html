@@ -9,19 +9,31 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
         <header>
             <h1>TREASURE HUNT</h1>
-            <h3>Find mythical items before your opponent!<h3>
+            <h2>Find mythical items before your opponent!<h2>
         </header>
         <main id="gamearea">
         </main>
         <section>
-            <button id="about">About</button>
-            <button id="restart">Restart</button>
+            <button id="aboutbtn">About</button>
+                <div id="aboutbox">
+                    <div id="aboutinfo">
+                        <p> You are a treasure hunter and are racing against the other team of treasure hunters (computer or second player)
+                            to find the buried treasues first. Legend has it that these 4 fabled objects are hidden in the grounds.</p>
+                            <ul>  
+                                <li>Philosopher's stone</li>
+                                <li>Pot of gold at the end of the Rainbow</li>
+                                <li>King Arthur's Sword</li>
+                                <li>Davy Jones chest</li>
+                            </ul>
+                           <p>These grounds are magical and where these items are hidden are different for every person.
+                           Can you find them first?</p>
+                    </div>
+                </div>
+            <button id="restart" onclick="window.location.reload()">Restart</button>
         </section>
     <script src="script.js" async defer></script>
     </body>
-</html>
+</html>        
+<!-- About popup box made using w3 schools as reference -->

@@ -106,19 +106,28 @@ const arrayofComputerBoxLocation = [boxBA, boxBB, boxBC, boxBD]
 
 changeclasses(arrayofComputerBoxLocation)
 //------Define boxes to have different colors for hit/miss----------------
-let hunterAmissmap = document.querySelectorAll("div.miss")    
-let hunterAhitmap = document.querySelectorAll("div.hit")
+let hunterAmissmap = document.querySelectorAll(".gridA.miss")    
+let hunterAhitmap = document.querySelectorAll(".gridA.hit")
 
 function makediggable(usermap, digColor) {
     usermap.forEach(grid => {
         grid.addEventListener('click', (e) => {
-            grid.style.backgroundColor = digColor
+            grid.style.backgroundColor = digColor;
         });
-    }, {once: true}); 
+    }); 
 }
 
 makediggable(hunterAmissmap, 'darkslategrey')
 makediggable(hunterAhitmap, 'goldenrod')
+//------Make function to display "X" for treasure------
+function xmarksthespot(usermap) {
+    usermap.forEach(grid => {
+        grid.addEventListener('click', (e) => {
+            grid.innerText = "X";
+        });
+    }); 
+}
+xmarksthespot(hunterAhitmap)
 //----- function to show items on opponent map---------
 function hideitems(mapinput) {
     for (let i = 0; i < computerlocatearray.length; i++) {
@@ -133,7 +142,7 @@ let playergridtrack = []
 hunterAmap.addEventListener('click', (e) => {
         playergridtrack.push(e.target.id)
     })
-//----------------------------------------------------------
+//------- Display rounds -----------------------------------
 const rounds = document.createElement('h3')
 let round = 0;
 document.querySelector('header').appendChild(rounds)
@@ -147,11 +156,12 @@ let computergridtrack = []
 function computerturn(h) {
     let rando = Math.ceil(Math.random() * 64)
     //-- make sure every turn is at unique location-----------------------
-    if (h.querySelector(`div:nth-child(${rando})`).style.backgroundColor != 'purple' &&
+    if (h.querySelector(`div:nth-child(${rando})`).style.backgroundColor != 'saddlebrown' &&
         h.querySelector(`div:nth-child(${rando})`).style.backgroundColor != 'darkslategray') {
         //would not work with a loop :'()
         if (rando == computerlocatearray[0] || rando == computerlocatearray[1] || rando == computerlocatearray[2] || rando == computerlocatearray[3]) {
-            h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'purple'
+            h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'saddlebrown';
+            h.querySelector(`div:nth-child(${rando})`).innerText = "X";
             computergridtrack.push(rando)
         } else {
             h.querySelector(`div:nth-child(${rando})`).style.backgroundColor = 'darkslategray'
@@ -167,11 +177,9 @@ function autoRound() {
         if (e.target.classList.contains('hit')) {
             computerturn(hunterB)
             winlose()
-            tracking()
         } else {
             computerturn(hunterB)
             winlose()
-            tracking()
         } 
     })
 }
@@ -189,7 +197,19 @@ function winlose() {
             alert("The computer found all the items before you!")
             location.reload()
         } else { 
-            console.log(round)
+           tracking()
         }
     }
-// ------Add restart button-------
+//-------Make "About" button--------------
+// const aboutbtn = document.querySelector("aboutbtn");
+// const aboutbox = document.querySelector("aboutbox");
+
+// //--- open aboutbox when aboutbtn clicked
+// aboutbtn.onclick = function () {
+//     aboutbox.style.display = "block";
+// };
+
+
+/* <button id="aboutbtn">About</button>
+<div id="aboutbox">
+    <div id="aboutinfo"> */

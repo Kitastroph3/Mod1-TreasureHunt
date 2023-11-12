@@ -43,8 +43,7 @@ HTML/CSS
     - 4 objects     
     - Randomly appears within background grounds
     - cannot occupy same space as another obeject
-    - can be horizontal or vertical
-- 
+
 ---------------------
 - when player clicks square, test:
     1) if player selected square with object
@@ -53,11 +52,10 @@ HTML/CSS
     2) computer "goes" by selecting random grid number
         - if object is selected, changes color
         - if object is not selected, changes color 
-            if object is selected, next move should be limited to vertical and horizontal square around previous choice
     3) check to see if game should continue
 
 - add event listener for player input
-- player selecetion function
+- player selection function
 - computer selection function
 - win  function
 
