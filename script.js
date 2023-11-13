@@ -119,7 +119,7 @@ function makediggable(usermap, digColor) {
 
 makediggable(hunterAmissmap, 'darkslategrey')
 makediggable(hunterAhitmap, 'goldenrod')
-//------Make function to display "X" for treasure------
+//------Make function to display "X" for treasure---------
 function xmarksthespot(usermap) {
     usermap.forEach(grid => {
         grid.addEventListener('click', (e) => {
@@ -128,14 +128,14 @@ function xmarksthespot(usermap) {
     }); 
 }
 xmarksthespot(hunterAhitmap)
-//----- function to show items on opponent map---------
+//----- Show items on opponent map-------------------------
 function hideitems(mapinput) {
     for (let i = 0; i < computerlocatearray.length; i++) {
         mapinput.querySelector(`div:nth-child(${computerlocatearray[i]})`).style.backgroundColor = 'pink'
     }
 }
 hideitems(hunterB)
-//------ detect input from player -------------------------
+//------ Detect input from player -------------------------
 let hunterAmap = document.getElementById('hunterA')
 
 let playergridtrack = []
@@ -150,8 +150,7 @@ function tracking() {
     round++
     rounds.innerText = `Round: ${round}`
 }
-//----------------------------------------------------------
-//------ make computer "go"--------------------------
+//------ Make computer "go"--------------------------
 let computergridtrack = []
 function computerturn(h) {
     let rando = Math.ceil(Math.random() * 64)
@@ -201,15 +200,15 @@ function winlose() {
         }
     }
 //-------Make "About" button--------------
-// const aboutbtn = document.querySelector("aboutbtn");
-// const aboutbox = document.querySelector("aboutbox");
 
-// //--- open aboutbox when aboutbtn clicked
-// aboutbtn.onclick = function () {
-//     aboutbox.style.display = "block";
-// };
+const aboutbtn = document.querySelector("#aboutbtn");
+const aboutbox = document.querySelector(".aboutbox");
 
+const closebtn = document.querySelector(".closebtn");
 
-/* <button id="aboutbtn">About</button>
-<div id="aboutbox">
-    <div id="aboutinfo"> */
+function toggleAboutBox() {
+    aboutbox.classList.toggle("showabout");
+}
+
+aboutbtn.addEventListener("click", toggleAboutBox);
+closebtn.addEventListener("click", toggleAboutBox);
