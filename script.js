@@ -204,11 +204,12 @@ function winlose() {
 const aboutbtn = document.querySelector("#aboutbtn");
 const aboutbox = document.querySelector(".aboutbox");
 
-const closebtn = document.querySelector(".closebtn");
-
 function toggleAboutBox() {
     aboutbox.classList.toggle("showabout");
 }
 
 aboutbtn.addEventListener("click", toggleAboutBox);
+
+
+const closebtn = document.querySelector(".closebtn");
 closebtn.addEventListener("click", toggleAboutBox);

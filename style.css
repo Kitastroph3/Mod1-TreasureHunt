@@ -112,7 +112,7 @@ and <!-- About popup box made using w3 schools as reference --> */
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);/*translate(x,y ) = 2D translation. center on x and y axis. Positive translate value moves towards bottom, negative toowards top. This is also what was originally missing */
     background-color: whitesmoke;
     padding: 20px;
     width: 40%;
