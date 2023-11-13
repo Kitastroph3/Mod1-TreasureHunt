@@ -18,7 +18,7 @@ GAMEPLAY
         If part of an object was found, the square turns gold.
         If no object was uncovered, the square turns grey. 
     2. Computer/Player 2 selects game square.
-        If part of an object was found, the square turns gold.
+        If part of an object was found, the square changes color.
         If no object was uncovered, the square turns grey. 
 - At the end of each round, computer will check to see if game is still in play
     - If player or computer uncovered all items, game is not in play (false)
@@ -27,7 +27,6 @@ GAMEPLAY
             - play again
         - If computer locates all objeccts before player- player loses :/
             - play again
------------------------------------------------------------------
 -----------------------------------------------------------------
 HTML/CSS
 - 2 containers using flex
@@ -57,8 +56,9 @@ HTML/CSS
 - add event listener for player input
 - player selection function
 - computer selection function
-- win  function
+- win function
 
 --------------------------------------
 future:
-- add item pics for items instead of color
+- add item pics for items instead of color.
+- make it so player can't click in same area twice
