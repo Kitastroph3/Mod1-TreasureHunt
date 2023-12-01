@@ -62,7 +62,7 @@ header {
 } 
 
 .gridA:hover {
-    cursor: grab;
+    cursor: pointer;
     background-color: rgb(99, 41, 41);
 } 
 
@@ -85,11 +85,22 @@ h1 {
     font-family: treasuremap;
 }
 
-button {
+.btn {
     margin-left: 35px;
     margin-right: 35px;
     font-size: 12pt;
     margin-top: 5%;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 100px;
+}
+
+.btn:hover {
+    background-color: rgba(49, 36, 9, 0.703);
+    color: whitesmoke;
+    border: 1px solid rgba(49, 36, 9, 0.703);
+    cursor: pointer;
 }
 
 /* Below code created using resources from https://sabe.io/tutorials/how-to-create-modal-popup-box 
@@ -121,9 +132,18 @@ and <!-- About popup box made using w3 schools as reference --> */
 
 .closebtn {
     float: right;
-    border-radius: 2px;
-    padding: 5px;
+    border-radius: 5px;
+    padding: 5px 8px;
     background-color: rgb(203, 203, 203);
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+.closebtn:hover {
+    background-color:  rgb(150, 150, 150);
+    color: black;
+    cursor: pointer;
+    font-weight: bolder;
 }
 
 .showabout {
