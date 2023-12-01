@@ -210,7 +210,6 @@ function toggleAboutBox() {
 
 aboutbtn.addEventListener("click", toggleAboutBox);
 
-
 const closebtn = document.querySelector(".closebtn");
 closebtn.addEventListener("click", toggleAboutBox);
 
