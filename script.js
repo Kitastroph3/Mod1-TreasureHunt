@@ -144,7 +144,7 @@ hunterAmap.addEventListener('click', (e) => {
     })
 //------- Display rounds -----------------------------------
 const rounds = document.createElement('h3')
-let round = 0;
+let round = -1;
 document.querySelector('header').appendChild(rounds)
 function tracking() {
     round++
@@ -213,3 +213,6 @@ aboutbtn.addEventListener("click", toggleAboutBox);
 
 const closebtn = document.querySelector(".closebtn");
 closebtn.addEventListener("click", toggleAboutBox);
+
+//--Display Rounds from beginning
+tracking()
