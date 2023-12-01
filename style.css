@@ -125,7 +125,7 @@ and <!-- About popup box made using w3 schools as reference --> */
     left: 50%;
     transform: translate(-50%, -50%);/*translate(x,y ) = 2D translation. center on x and y axis. Positive translate value moves towards bottom, negative toowards top. This is also what was originally missing */
     background-color: whitesmoke;
-    padding: 20px;
+    padding: 40px 20px 20px 20px;
     width: 40%;
     border-radius: 20px;
 }
@@ -137,6 +137,8 @@ and <!-- About popup box made using w3 schools as reference --> */
     background-color: rgb(203, 203, 203);
     color: whitesmoke;
     font-weight: bolder;
+    margin-top: -20px;
+    margin-bottom: 5px;
 }
 
 .closebtn:hover {
@@ -148,4 +150,12 @@ and <!-- About popup box made using w3 schools as reference --> */
 
 .showabout {
     visibility: visible;
+}
+
+ul {
+    display: grid;
+    /* flex-direction: column; */
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
 }
