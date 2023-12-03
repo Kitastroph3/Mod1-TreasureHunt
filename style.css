@@ -15,8 +15,7 @@ Always include this text file when distributing the font < */
 body {
     background-color: rgb(165, 180, 148);
     background-image: url(background.jpg);
-    background-repeat: no-repeat;
-    background-position: auto;
+    background-repeat: repeat;
     background-size: cover;
     font-family: Verdana;
     display: flex;
@@ -24,6 +23,8 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 10px 20px;
+    min-width: 390px;
 }
 /* Image made using perchance.org/ai-photo-generator */
 
@@ -126,7 +127,7 @@ and <!-- About popup box made using w3 schools as reference --> */
     left: 50%;
     transform: translate(-50%, -50%);/*translate(x,y ) = 2D translation. center on x and y axis. Positive translate value moves towards bottom, negative toowards top. This is also what was originally missing */
     background-color: whitesmoke;
-    padding: 40px 20px 20px 20px;
+    padding: 40px 20px;
     width: 40%;
     border-radius: 20px;
 }
