@@ -6,7 +6,7 @@
 
 Treasure Hunt is a simple-battleship style game made using vanilla javascript, CSS, and HTML. 
 
-There are four hidden "treasures" which are randomly assigned a location on each player's map (an 8x8 grid). If a treasure is appropriately found, the box will change color and be marked with an "X". 
+There are four hidden "treasures" which are randomly assigned a location on each player's map (an 8x8 grid). If a treasure is found at a particular location, that box will change color and be marked with an "X". 
 
 ## Story
 
@@ -18,6 +18,7 @@ You are a treasure hunter and are racing against other treasure hunters (compute
     - Davy Jones chest
 
 These grounds are magical and where these items are hidden are different for every person.
+
 Can you find them all first?
 
 ## Gameplay
@@ -33,13 +34,13 @@ Can you find them all first?
 
 ## Future Developments
 
-This project is currently playable, but remains under development.The following features are expected to be added:
+This project is currently playable, but remains under development. I'm hoping to add the following features:
 
-* background images, displaying the found objects
-* high contrast accessibility button
-* using the "enter" button to automatically select a grid location
-* adding squares that when uncovered, will allow you to "stop time" and give you and extra turn
-* varying sizes of the trasures
+* Background images, displaying the found objects
+* High contrast accessibility button
+* Using the "enter" button to automatically select a grid location
+* Adding squares that when uncovered, will allow you to "stop time" and give you and extra turn
+* Varying sizes of the trasures
 
 ## Thanks for visiting!
 
