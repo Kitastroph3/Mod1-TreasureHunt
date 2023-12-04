@@ -26,9 +26,9 @@ Can you find them all first?
 
 * Each round consists of the player making a selection on their map, followed by the computer making a selection on it's map. 
 
-- If an item is found, the box in which it was found will be marked with an "X"
-- If an item is not found, the box will change color. 
-- Neither player can select the same box twice.
+-- If an item is found, the box in which it was found will be marked with an "X"
+-- If an item is not found, the box will change color. 
+-- Neither player can select the same box twice.
 
 * After each round, the program checks to see if all the items have been found.  
 
@@ -42,6 +42,8 @@ This project is currently playable, but remains under development.The following 
 * adding squares that when uncovered, will allow you to "stop time" and give you and extra turn
 * varying sizes of the trasures
 
-### Thanks for visiting!
+## Thanks for visiting!
 
 I hope you enjoy this little game as much as I have enjoyed making it. 
+
+----Kit Danovsky (kitastroph3)
