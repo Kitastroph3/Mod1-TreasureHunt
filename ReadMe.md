@@ -44,6 +44,6 @@ This project is currently playable, but remains under development. I'm hoping to
 
 ## Thanks for visiting!
 
-I hope you enjoy this little game as much as I have enjoyed making it. 
+I hope you enjoy playing this little game as much as I have enjoyed making it. 
 
 ----Kit Danovsky (kitastroph3)
