@@ -1,10 +1,9 @@
 //---------MAKE OBJECTS----------------------------
 //---creating objects (origins of mythical objects):
 class MythItem { 
-    constructor(name, location, size) { 
+    constructor(name, location) { 
         this.name = name
         this.location = location
-        this.size = size
     }
 }
 
@@ -87,7 +86,7 @@ function changeclasses(boxLocation) {
     for (let i = 0; i < boxLocation.length; i++)
         boxLocation[i].classList.remove('miss')
     for (let i = 0; i < boxLocation.length; i++)
-        boxLocation[i].classList.add('hit')    //would not work if add function followed remove in same loop
+        boxLocation[i].classList.add('hit')
 }
 
 changeclasses(arrayofPlayerBoxLocation)
@@ -199,6 +198,7 @@ hunterAmap.addEventListener('click', (e) => {
 })
 
 //--------Win State/Lose state-----------------------------
+
 function winlose() {
     let playergridtracktonumber = playergridtrack.map(Number)
     // for (let i = 0; i < playergridtracktonumber.length; i++) {
