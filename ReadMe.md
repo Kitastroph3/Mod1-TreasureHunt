@@ -25,10 +25,9 @@ Can you find them all first?
 * There are two gameboards. One that the player "sees" and the other that the computer "sees"
 
 * Each round consists of the player making a selection on their map, followed by the computer making a selection on it's map. 
-
--- If an item is found, the box in which it was found will be marked with an "X"
--- If an item is not found, the box will change color. 
--- Neither player can select the same box twice.
+    - If an item is found, the box in which it was found will be marked with an "X"
+    - If an item is not found, the box will change color. 
+    - Neither player can select the same box twice.
 
 * After each round, the program checks to see if all the items have been found.  
 
