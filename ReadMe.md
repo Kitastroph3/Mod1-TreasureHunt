@@ -4,7 +4,7 @@
 
 ## About
 
-Treasure Hunt is a simple-battleship style game made using vanilla javascript, CSS, and HTML. 
+Treasure Hunt is a simple battleship-style game made using vanilla javascript, CSS, and HTML. 
 
 There are four hidden "treasures" which are randomly assigned a location on each player's map (an 8x8 grid). If a treasure is found at a particular location, that box will change color and be marked with an "X". 
 
