@@ -2,6 +2,11 @@
 
 ![Screenshot of Treasure Hunt game on browser screen](TreasureHunt.png)
 
+## Live link
+Play on render.com
+
+https://treasure-hunt-play.onrender.com/
+
 ## About
 
 Treasure Hunt is a simple battleship-style game made using vanilla javascript, CSS, and HTML. 
